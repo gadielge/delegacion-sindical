@@ -1,0 +1,614 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Delegación Sindical</title>
+
+<style>
+:root {
+    --azul: #173b57;
+    --azul-claro: #edf4f8;
+    --fondo: #f4f6f8;
+    --blanco: #ffffff;
+    --texto: #18222c;
+    --gris: #687582;
+    --borde: #dce3e8;
+    --verde: #217a46;
+    --rojo: #a63838;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Arial, sans-serif;
+    background: var(--fondo);
+    color: var(--texto);
+}
+
+header {
+    background: var(--azul);
+    color: white;
+    position: sticky;
+    top: 0;
+    z-index: 10;
+}
+
+.contenedor {
+    width: min(1080px, calc(100% - 28px));
+    margin: auto;
+}
+
+.encabezado {
+    min-height: 68px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.logo {
+    width: 44px;
+    height: 44px;
+    border-radius: 12px;
+    background: rgba(255,255,255,.15);
+    display: grid;
+    place-items: center;
+    font-weight: bold;
+}
+
+.nombre {
+    font-weight: 700;
+    font-size: 18px;
+}
+
+nav {
+    display: flex;
+    gap: 5px;
+    overflow-x: auto;
+    padding-bottom: 10px;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    padding: 9px 12px;
+    border-radius: 9px;
+    white-space: nowrap;
+}
+
+nav a:hover {
+    background: rgba(255,255,255,.15);
+}
+
+.hero {
+    background: linear-gradient(135deg, #173b57, #2d6689);
+    color: white;
+    padding: 55px 0 40px;
+}
+
+.hero h1 {
+    font-size: clamp(32px, 8vw, 54px);
+    line-height: 1.05;
+    margin: 12px 0;
+}
+
+.hero p {
+    max-width: 680px;
+    color: #e5eef4;
+    font-size: 18px;
+    line-height: 1.5;
+}
+
+.boton {
+    display: inline-block;
+    border: 0;
+    border-radius: 10px;
+    padding: 12px 17px;
+    font-weight: 650;
+    cursor: pointer;
+    text-decoration: none;
+}
+
+.boton-blanco {
+    background: white;
+    color: var(--azul);
+}
+
+.seccion {
+    padding: 38px 0;
+}
+
+.seccion h2 {
+    margin-top: 0;
+    font-size: 28px;
+}
+
+.subtitulo {
+    color: var(--gris);
+    margin-top: -8px;
+    margin-bottom: 20px;
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 16px;
+}
+
+.tarjeta {
+    background: var(--blanco);
+    border: 1px solid var(--borde);
+    border-radius: 16px;
+    padding: 20px;
+    box-shadow: 0 2px 8px rgba(0,0,0,.04);
+}
+
+.tarjeta h3 {
+    margin: 8px 0;
+}
+
+.icono {
+    font-size: 25px;
+}
+
+.lista {
+    display: grid;
+    gap: 10px;
+}
+
+.fila {
+    background: white;
+    border: 1px solid var(--borde);
+    border-radius: 12px;
+    padding: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+}
+
+.muted {
+    color: var(--gris);
+}
+
+.estado {
+    border: 0;
+    border-radius: 9px;
+    padding: 10px 13px;
+    font-weight: 650;
+    cursor: pointer;
+}
+
+.presente {
+    background: #e9f6ee;
+    color: var(--verde);
+}
+
+.ausente {
+    background: #faeded;
+    color: var(--rojo);
+}
+
+.estadisticas {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+    margin-bottom: 16px;
+}
+
+.estadistica {
+    flex: 1;
+    min-width: 120px;
+    background: white;
+    border: 1px solid var(--borde);
+    border-radius: 14px;
+    padding: 15px;
+}
+
+.estadistica strong {
+    display: block;
+    font-size: 25px;
+    margin-top: 4px;
+}
+
+footer {
+    background: #142d40;
+    color: white;
+    padding: 30px 0;
+    margin-top: 20px;
+}
+
+@media (max-width: 700px) {
+    .grid {
+        grid-template-columns: 1fr;
+    }
+
+    .fila {
+        align-items: flex-start;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<header>
+
+<div class="contenedor">
+
+<div class="encabezado">
+
+<div class="logo">DS</div>
+
+<div class="nombre">
+Delegación Sindical
+</div>
+
+</div>
+
+<nav>
+<a href="#inicio">Inicio</a>
+<a href="#avisos">Avisos</a>
+<a href="#calendario">Calendario</a>
+<a href="#documentos">Documentos</a>
+<a href="#integrantes">Integrantes</a>
+<a href="#asistencia">Asistencia</a>
+</nav>
+
+</div>
+
+</header>
+
+
+<main>
+
+<section id="inicio" class="hero">
+
+<div class="contenedor">
+
+<div>PORTAL DE LA DELEGACIÓN</div>
+
+<h1>
+Información, comunicación y participación.
+</h1>
+
+<p>
+Un espacio para consultar avisos, reuniones, documentos y mantener el registro de asistencia de la delegación.
+</p>
+
+<a href="#avisos" class="boton boton-blanco">
+Ver avisos
+</a>
+
+</div>
+
+</section>
+
+
+<section id="avisos" class="seccion">
+
+<div class="contenedor">
+
+<h2>Avisos y comunicados</h2>
+
+<p class="subtitulo">
+Información reciente de la delegación.
+</p>
+
+<div class="lista">
+
+<div class="tarjeta">
+
+<small class="muted">
+7 octubre 2026
+</small>
+
+<h3>
+Próxima reunión de delegación
+</h3>
+
+<p class="muted">
+Aquí aparecerá el comunicado y la información correspondiente a la reunión.
+</p>
+
+</div>
+
+
+<div class="tarjeta">
+
+<small class="muted">
+Comunicado
+</small>
+
+<h3>
+Información sindical
+</h3>
+
+<p class="muted">
+Los comunicados podrán publicarse desde el área administrativa.
+</p>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+
+<section id="calendario" class="seccion">
+
+<div class="contenedor">
+
+<h2>Calendario</h2>
+
+<p class="subtitulo">
+Próximas reuniones y actividades.
+</p>
+
+<div class="grid">
+
+<div class="tarjeta">
+<div class="icono">📅</div>
+<h3>14 de octubre</h3>
+<p class="muted">Reunión de delegación</p>
+</div>
+
+<div class="tarjeta">
+<div class="icono">📅</div>
+<h3>28 de octubre</h3>
+<p class="muted">Asamblea</p>
+</div>
+
+<div class="tarjeta">
+<div class="icono">📅</div>
+<h3>Próxima actividad</h3>
+<p class="muted">Por definir</p>
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+
+<section id="documentos" class="seccion">
+
+<div class="contenedor">
+
+<h2>Documentos</h2>
+
+<p class="subtitulo">
+Formatos, convocatorias y reglamentos.
+</p>
+
+<div class="lista">
+
+<div class="fila">
+<div>
+<strong>Convocatoria de ejemplo</strong>
+<br>
+<small class="muted">PDF · Convocatorias</small>
+</div>
+
+<button class="boton" style="background:#edf4f8;color:#173b57">
+Ver
+</button>
+
+</div>
+
+
+<div class="fila">
+<div>
+<strong>Reglamento de ejemplo</strong>
+<br>
+<small class="muted">PDF · Reglamentos</small>
+</div>
+
+<button class="boton" style="background:#edf4f8;color:#173b57">
+Ver
+</button>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+
+<section id="integrantes" class="seccion">
+
+<div class="contenedor">
+
+<h2>Integrantes</h2>
+
+<p class="subtitulo">
+Directorio básico de la delegación.
+</p>
+
+<div class="grid">
+
+<div class="tarjeta">
+<div class="icono">👤</div>
+<h3>Secretaría General</h3>
+<p class="muted">Nombre por definir</p>
+</div>
+
+<div class="tarjeta">
+<div class="icono">👤</div>
+<h3>Organización</h3>
+<p class="muted">Nombre por definir</p>
+</div>
+
+<div class="tarjeta">
+<div class="icono">👤</div>
+<h3>Finanzas</h3>
+<p class="muted">Nombre por definir</p>
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+
+<section id="asistencia" class="seccion">
+
+<div class="contenedor">
+
+<h2>Lista de asistencia</h2>
+
+<p class="subtitulo">
+Asamblea de Delegación · 14 de octubre de 2026
+</p>
+
+
+<div class="estadisticas">
+
+<div class="estadistica">
+<span class="muted">Presentes</span>
+<strong id="presentes">0</strong>
+</div>
+
+<div class="estadistica">
+<span class="muted">Ausentes</span>
+<strong id="ausentes">6</strong>
+</div>
+
+<div class="estadistica">
+<span class="muted">Total</span>
+<strong>6</strong>
+</div>
+
+</div>
+
+
+<div id="listaAsistencia" class="lista">
+</div>
+
+</div>
+
+</section>
+
+
+<section class="seccion">
+
+<div class="contenedor">
+
+<div class="tarjeta">
+
+<h2>Contacto</h2>
+
+<p class="muted">
+Los datos reales de contacto se agregarán posteriormente.
+</p>
+
+</div>
+
+</div>
+
+</section>
+
+</main>
+
+
+<footer>
+
+<div class="contenedor">
+
+<strong>Delegación Sindical</strong>
+
+<p class="muted">
+Primera versión del portal.
+</p>
+
+</div>
+
+</footer>
+
+
+<script>
+
+const integrantes = [
+"Ana López",
+"Carlos García",
+"María Torres",
+"José Ramírez",
+"Laura Moreno",
+"Pedro Valenzuela"
+];
+
+const asistencia = Array(integrantes.length).fill(false);
+
+function mostrarAsistencia() {
+
+const lista = document.getElementById("listaAsistencia");
+
+lista.innerHTML = "";
+
+let presentes = 0;
+
+integrantes.forEach((nombre, indice) => {
+
+if (asistencia[indice]) {
+presentes++;
+}
+
+const fila = document.createElement("div");
+
+fila.className = "fila";
+
+const nombreElemento = document.createElement("strong");
+
+nombreElemento.textContent = nombre;
+
+const boton = document.createElement("button");
+
+boton.className =
+asistencia[indice]
+? "estado presente"
+: "estado ausente";
+
+boton.textContent =
+asistencia[indice]
+? "🟢 Presente"
+: "🔴 Ausente";
+
+boton.onclick = function() {
+
+asistencia[indice] = !asistencia[indice];
+
+mostrarAsistencia();
+
+};
+
+fila.appendChild(nombreElemento);
+
+fila.appendChild(boton);
+
+lista.appendChild(fila);
+
+});
+
+document.getElementById("presentes").textContent = presentes;
+
+document.getElementById("ausentes").textContent =
+integrantes.length - presentes;
+
+}
+
+mostrarAsistencia();
+
+</script>
+
+</body>
+</html>
